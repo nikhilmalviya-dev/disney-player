@@ -12,8 +12,9 @@ const HomePage = () => {
         <img
           className="brand-logo-home"
           src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
-          alt="Disney+;Hotstar"
-        ></img>
+          alt="Disney+ Hotstar"
+        />
+        <p className="home-tagline">Stream your favourite music videos</p>
         <section className="genre-sec">
           <Genre />
         </section>

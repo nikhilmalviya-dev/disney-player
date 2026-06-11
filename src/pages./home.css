@@ -1,27 +1,59 @@
 
 .home-container {
     background-image: var(--linear-color);
-    height:86.88vh; 
+    min-height: 86.88vh;
     font-family: 'Roboto Slab', serif;
-    color:var(--full-white);  
+    color: var(--full-white);
+    padding: 2rem 1.25rem;
 }
 
-.brand-logo-home{
-    width:18rem;
+.brand-logo-home {
+    width: clamp(12rem, 40vw, 18rem);
+    max-width: 90%;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
 }
 
-
-.exploreBtn{
-    padding:0.6rem 1rem;
-    background-color:var( --blue-dark);
-    border: 3px solid rgb(219, 184, 184);
-    color:var( --white-200);
-    border-radius:0.2rem 0.5rem;
+.home-tagline {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.exploreBtn:hover{
-    background-color:var(--blue-900);
-    color:var( --white-200);
+.genre-sec {
+    width: 100%;
 }
 
+/* The Link wrapping the button is a flex child — give it auto width so it
+   stays centered, and make the button fill it */
+.home-container > a {
+    display: flex;
+    justify-content: center;
+}
 
+.exploreBtn {
+    padding: 0.75rem 2.5rem;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border: none;
+    color: var(--full-white);
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.45);
+    transition: all 0.25s ease;
+}
+
+.exploreBtn:hover {
+    background: linear-gradient(135deg, #6d28d9, #9333ea);
+    box-shadow: 0 6px 28px rgba(168, 85, 247, 0.65);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 480px) {
+    .home-container {
+        padding: 1.5rem 0.75rem;
+        gap: 1.25rem !important;
+    }
+}

@@ -1,5 +1,3 @@
-// import { useFeatures } from "../../Context/features-context";
-import Videos from "../Videos./Videos";
 import Sidebar from "../../Componant/SideBar/SideBar";
 import "./watchLater.css";
 import Navbar from "../../Componant/Navbar/Navbar";
@@ -16,13 +14,13 @@ const WatchLater = () => {
         <section>
           <Sidebar />
         </section>
-        <div>
+        <div className="page-right">
           {WatchLaterVideos.length !== 0 ? (
             <section>
               <h2 className="WatchLater-heading">Watch Later</h2>
               <div className="WatchLater-video  gap-8p margin-top-32p">
                 {WatchLaterVideos.map((watchVideo) => (
-                  <div className="positon-relative">
+                  <div key={watchVideo.id} className="positon-relative">
                     <VideoCard data={watchVideo} />
                     <i
                       onClick={() => removeWatchVideo(watchVideo.id)}

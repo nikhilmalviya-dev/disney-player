@@ -15,11 +15,11 @@ const Playlist = () => {
         <aside>
           <Sidebar />
         </aside>
-        <div className="playlist-contain">
+        <div className="playlist-contain page-right">
           {playlist.length !== 0 ? (
             <section className="playlist-video ">
               {playlist.map((item) => (
-                <section className="playlist-video-contain flex-column justify-between text-align gap-8p">
+                <section key={item._id} className="playlist-video-contain flex-column justify-between text-align gap-8p">
                   <Link to={`/playlistVideo/${item._id}`}>
                     <h1 className="see-heading margin-top-8p">
                       See PlayList Videos

@@ -1,46 +1,48 @@
-.Likes-container{
+.Likes-container {
     display: grid;
     grid-template-columns: 12.5rem 1fr;
-    color:var(--full-white);
-    font-family: 'Playfair Display SC', serif;
-    min-height: 86.90vh; 
+    height: calc(100vh - var(--navbar-height));
+    overflow: hidden;
+    color: var(--full-white);
+    font-family: 'Roboto Slab', serif;
 }
 
-.likes-video-contain{
+.likes-heading,
+.WatchLater-heading,
+.history-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1.25rem 1.5rem 0.5rem;
+    color: var(--full-white);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+.likes-video-contain {
     display: grid;
-    grid-template-columns: repeat(4,1fr );
-    min-height:84vh;
-
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    align-content: flex-start;
+    padding-bottom: 4rem;
 }
 
+.trash-icon-play {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.5rem;
+    color: rgba(255,255,255,0.4);
+    font-size: 1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
 
-@media screen and (max-width: 1190px) {
+.trash-icon-play:hover {
+    color: #f87171;
+    transform: scale(1.15);
+}
+
+@media screen and (max-width: 768px) {
     .Likes-container {
-        display: grid;
-        grid-template-columns: 1fr;
-    
-    }
-}
-
-@media screen and (max-width: 985px) {
-    .likes-video-contain {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding-bottom: 3.5rem;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .likes-video-contain {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-}
-
-@media screen and (max-width: 560px) {
-    .likes-video-contain {
-        display: grid;
         grid-template-columns: 1fr;
     }
 }

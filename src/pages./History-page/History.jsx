@@ -13,11 +13,11 @@ const History = () => {
         <div>
           <Sidebar />
         </div>
-        <section>
+        <section className="page-right">
           {historyVideos.length !== 0 ? (
             <div>
-              <section className="clearBtn-history flex-justify-between font-16p margin-2r">
-                <h3 className="history-heading">Watch history</h3>
+              <section className="clearBtn-history">
+                <h3 className="history-heading">Watch History</h3>
                 <button
                   className="clearBtn font-16p padding-2px"
                   onClick={() => clearAllHistory()}
@@ -27,7 +27,7 @@ const History = () => {
               </section>
               <section className="history-video-contain gap-8p margin-top-32p">
                 {historyVideos.map((historyVideo) => (
-                  <div className="positon-relative">
+                  <div key={historyVideo.id} className="positon-relative">
                     <VideoCard data={historyVideo} />
                     <i
                       onClick={() => removeHistory(historyVideo.id)}

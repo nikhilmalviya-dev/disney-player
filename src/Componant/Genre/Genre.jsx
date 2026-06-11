@@ -8,22 +8,24 @@ const Genre = () => {
   const { VideoDispatch } = useFilter();
 
   return (
-    <main className="genre-container">
+    <div className="genre-container">
       {genre.map((item) => (
-        <section className="genre-contain flex-column  align-center gap-8p padding-4px ">
+        <div key={item.genre} className="genre-contain">
           <Link to="/videoListing">
-            <button
+            <div
+              className="genre-card"
               onClick={() =>
                 VideoDispatch({ type: "FILTER_BY_GENRE", payload: item.genre })
               }
             >
-              <img className="cateImg" src={item.categoryImg} alt="/" />
-            </button>
+              <img className="cateImg" src={item.categoryImg} alt={item.genre} />
+              <span className="genre-label">{item.genre}</span>
+            </div>
           </Link>
-          <h2>{item.genre}</h2>
-        </section>
+        </div>
       ))}
-    </main>
+    </div>
   );
 };
+
 export default Genre;

@@ -1,25 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Libre+Bodoni:ital@1&family=Permanent+Marker&family=Roboto+Slab&family=Rubik+Wet+Paint&family=Satisfy&family=Shadows+Into+Light&family=Tapestry&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 .sidebar-container {
-    border: 2px solid var(--black-1000);
-    background-image: var(--linear-color);
-    font-family: 'Playfair Display SC', serif;
-    height: 86.5vh;
-
-  }
-
-.lib-sidebar li{
-    margin-top:3rem;
-    color:var(--full-white);
-    font-weight: bold;
-    
-}
-.lib-sidebar li span{
-    margin-left:1.2rem;
-}
-.lib-sidebar li:hover{
-    text-decoration:underline;
-    text-decoration-color:var(--black-1000);
+    background: #08041a;
+    border-right: 1px solid rgba(168, 85, 247, 0.2);
+    height: 100%;
+    font-family: 'Roboto Slab', serif;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
+.icon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+}
+
+.sidebar-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    transition: background 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(168, 85, 247, 0.15);
+}
+
+.sidebar-link--active {
+    background: rgba(168, 85, 247, 0.25);
+    border-left: 3px solid var(--accent);
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sidebar-link:hover .sidebar-item,
+.sidebar-link--active .sidebar-item {
+    color: var(--full-white);
+}
+
+.sidebar-icon {
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}

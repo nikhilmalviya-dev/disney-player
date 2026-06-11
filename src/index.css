@@ -1,8 +1,15 @@
 @import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
 
 
+html {
+  background: #000;
+  overscroll-behavior: none;
+}
+
 body {
   margin: 0;
+  background: #000;
+  overscroll-behavior: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

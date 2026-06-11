@@ -1,35 +1,170 @@
 @import url(../Video-list/videos.css);
 
-.single-video-container{
+.single-video-container {
     display: grid;
-    grid-template-columns: 12.5rem 1fr 20.5rem;
+    grid-template-columns: 12.5rem 1fr 22rem;
+    height: calc(100vh - var(--navbar-height));
+    overflow: hidden;
     color: var(--full-white);
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
-.Suggestions-heading{
-    text-decoration: underline;
+.iframe-container {
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 1.25rem 1.5rem;
 }
 
+.iframe-container iframe {
+    width: 100%;
+    height: 56.25vw;
+    max-height: 480px;
+    border-radius: 0 0 0.75rem 0.75rem;
+    display: block;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #000;
+}
 
-@media screen and (max-width:1343px) {
-    .single-video-container{
-        display: grid;
-        grid-template-columns: 12.5rem 1fr 20.5rem;
+.titleName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 0.15rem;
+    color: var(--full-white);
+}
+
+.video-detail-container {
+    margin: 0.5rem 0 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem;
+}
+
+.single-video-detail {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 1.4rem;
+}
+
+.single-video-detail i {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.single-video-detail i:hover {
+    transform: scale(1.2);
+}
+
+.single-video-detail .fa-thumbs-up:not([style*="red"]):hover { color: #3b82f6; }
+.single-video-detail .fa-clock:not([style*="red"]):hover { color: #f59e0b; }
+.single-video-detail .fa-folder-plus:hover { color: var(--accent); }
+
+.img-creator {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.img-creator .badge-img {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba(168,85,247,0.4);
+}
+
+.img-creator h3 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.description {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.suggestions-panel {
+    padding: 1rem 0.75rem;
+    border-left: 1px solid rgba(255,255,255,0.07);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    height: 100%;
+}
+
+.Suggestions-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(168,85,247,0.2);
+}
+
+/* Tablet: narrow suggestions */
+@media screen and (max-width: 1343px) {
+    .single-video-container {
+        grid-template-columns: 12.5rem 1fr 20rem;
     }
-    iframe {
-        width: 100%;
-        height: 60vh;
-        padding: 0.2rem;
-    }
 }
 
-
-
+/* Tablet: sidebar stays left, suggestions hidden (handled in videos.css) */
 @media screen and (max-width: 1190px) {
-    .single-video-container{
-        display: grid;
+    .single-video-container {
+        grid-template-columns: 12.5rem 1fr;
+    }
+}
+
+/* Mobile: linear single-column scroll, suggestions restored below video */
+@media screen and (max-width: 768px) {
+    .single-video-container {
         grid-template-columns: 1fr;
-        padding-bottom: 3.5rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: 4rem;
+    }
+
+    .iframe-container {
+        height: auto;
+        overflow-y: visible;
+        overscroll-behavior: auto;
+        padding: 0 0 1rem;
+    }
+
+    .suggestions-panel {
+        height: auto;
+        overflow-y: visible;
+        overscroll-behavior: auto;
+        padding: 0.75rem;
+    }
+
+    .iframe-container iframe {
+        height: 56.25vw;
+        max-height: none;
+        border-radius: 0;
+    }
+
+    .titleName,
+    .video-detail-container,
+    .img-creator,
+    hr {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .video-detail-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .titleName {
+        font-size: 1rem;
     }
 }

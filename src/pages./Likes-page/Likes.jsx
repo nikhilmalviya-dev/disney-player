@@ -13,13 +13,13 @@ const Likes = () => {
         <section>
           <Sidebar />
         </section>
-        <div>
+        <div className="page-right">
           {LikeVideos.length !== 0 ? (
             <div>
               <h2 className="likes-heading">Likes Video</h2>
               <section className="likes-video-contain gap-8p margin-top-32p">
                 {LikeVideos.map((likeVideo) => (
-                  <section className="positon-relative">
+                  <section key={likeVideo.id} className="positon-relative">
                     <VideoCard data={likeVideo} />
                     <i
                       onClick={() => removeLikeVideo(likeVideo.id)}

@@ -51,7 +51,7 @@ function App() {
           }
         />
         <Route
-          path="history"
+          path="/history"
           element={
             <RequireAuth>
               <History />

@@ -5,10 +5,10 @@ const GenreFilter = () => {
   const { VideoState, VideoDispatch } = useFilter();
   const filters = ["ALL", "LOFI", "ROMANTIC", "SAD", "EVERGREEN", "POP"];
   return (
-    <div className="genreChips-container position-sticky-6r padding-4px z-index-1">
+    <div className="genreChips-container">
       <ul className="genre-list flex">
         {filters.map((item) => (
-          <div>
+          <div key={item}>
             <button
               className={VideoState.videosFilter === item ? "genreFocus padding-8p margin-8p" : "genre-btn padding-8p margin-8p"}
               onClick={() =>

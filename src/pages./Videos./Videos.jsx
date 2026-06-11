@@ -46,7 +46,7 @@ const Videos = ({ data }) => {
           filteredArray.length === 0 ? 
           <h1 className="no-found  margin-top-16p">No videos found. Search for something else!</h1> :
           filteredArray.map((item) => (
-          <section className="videos-detail padding-4px gap-8p flex-column positon-relative">
+          <section key={item.id} className="videos-detail padding-4px gap-8p flex-column positon-relative">
             <Link to={`/singleVideo/${item.id}`}>
               <section onClick={() => getHistoryVideo(item)}>
                 <div>

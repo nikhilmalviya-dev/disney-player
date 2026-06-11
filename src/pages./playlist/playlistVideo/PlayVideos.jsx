@@ -33,9 +33,9 @@ const PlaylistVideo = () => {
           <Sidebar />
         </aside>
         {getPlaylist !== undefined ? (
-          <section className="playlist-video flex  margin-top-8p">
+          <section className="playlist-video page-right flex margin-top-8p">
             {getPlaylist.videos.map((item) => (
-              <section className="positon-relative">
+              <section key={item.id} className="positon-relative">
                 <VideoCard data={item} />
                 <i
                   onClick={() => deleteFunc(getPlaylist._id, item.id)}

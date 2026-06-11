@@ -35,11 +35,9 @@ useEffect(() => {
 
 
   const loginHandler = () => {
-    setError({ isError: false });
-    setLoginDetail({
-      email: "nikmalviya422@gmail.com",
-      password: "nikhil@123",
-  })
+    const guestDetail = { email: "nikmalviya422@gmail.com", password: "nikhil@123" };
+    setLoginDetail(guestDetail);
+    LoginPage(guestDetail);
   };
 
 
@@ -59,7 +57,7 @@ useEffect(() => {
       <div className="auth-container flex-center">
         <div className="auth-contain flex-column align-center gap-10px padding-17p">
           <h2>Login</h2>
-          <lable htmlFor="email">
+          <label htmlFor="email">
             Enter your Email
             <input
               type="email"
@@ -70,10 +68,10 @@ useEffect(() => {
               onChange={(e) => inputHandler(e.target)}
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.email && <div className="wrong-input">{error.email}</div>}
 
-          <lable htmlFor="password">
+          <label htmlFor="password">
             Enter your password
             <input
               type="password"
@@ -84,12 +82,12 @@ useEffect(() => {
               placeholder="Enter your Password"
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.password && <div className="wrong-input">{error.password}</div>}
 
-          <lable htmlFor="remember">
-            <input type="checkbox" className="checkbox-remember" /> Remember me
-          </lable>
+          <label htmlFor="remember" className="checkbox-remember-label">
+            <input type="checkbox" id="remember" /> Remember me
+          </label>
           <button
             className="loginbtn-createAcount padding-4px font-18p"
             onClick={clickHandler}

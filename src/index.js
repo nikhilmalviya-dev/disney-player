@@ -1,6 +1,5 @@
 import React from "react";
-//  import ./node_modules/.bin/webpack-cli
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -17,7 +16,7 @@ import {PlaylistProvider} from "./Context/Features-page/Playlist-context";
 // Call make Server
 makeServer();
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <FilterProvider>
@@ -38,6 +37,5 @@ ReactDOM.render(
         </GenreProvider>
       </FilterProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

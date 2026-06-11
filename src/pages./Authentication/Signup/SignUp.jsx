@@ -1,13 +1,11 @@
-import {Link , useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useEffect , useState} from "react";
 import Navbar from "../../../Componant/Navbar/Navbar";
 import { SignupValidChecker } from "../../../styless/passwordChecker";
-
 import {useAuth} from "../../../Context/Auth-context";
+import "../Login/login.css";
 
 const Signup=()=>{
-
-  const navigate= useNavigate();
   const [error, setError] = useState({ isError: true });
   const [userDetail, setUserDetail] = useState({
       firstName: "",
@@ -44,7 +42,7 @@ const Signup=()=>{
         <div className="auth-container flex-center">
         <div className="auth-contain flex-column align-center gap-10px padding-8p">
           <h2>Sign-up</h2>
-          <lable htmlFor="email">
+          <label htmlFor="email">
             Email Address
             <input
               type="email"
@@ -54,9 +52,9 @@ const Signup=()=>{
               required
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.email && <div className="wrong-input">{error.email}</div>}
-          <lable htmlFor="First Name">
+          <label htmlFor="First Name">
             First Name
             <input
               type="text"
@@ -66,9 +64,9 @@ const Signup=()=>{
               required
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.firstname && <div className="wrong-input">{error.firstname}</div>}
-          <lable htmlFor="Last Name">
+          <label htmlFor="Last Name">
             Last Name
             <input
               type="text"
@@ -78,9 +76,9 @@ const Signup=()=>{
               name="lastName"
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.lastname && <div className="wrong-input">{error.lastname}</div>}
-          <lable htmlFor="New password">
+          <label htmlFor="New password">
             New Password
             <input
               type="password"
@@ -90,10 +88,10 @@ const Signup=()=>{
               placeholder="*********"
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.password && <div className="wrong-input">{error.password}</div>}
 
-          <lable htmlFor=" Confirm password">
+          <label htmlFor=" Confirm password">
             Confirm Password
             <input
               type="password"
@@ -103,11 +101,11 @@ const Signup=()=>{
               placeholder="**********"
               className="auth-detail-input font-16p flex margin-2p"
             />
-          </lable>
+          </label>
           {error.confirmpassword && <div className="wrong-input">{error.confirmpassword}</div>}
-          <lable htmlFor="term & conditions">
-            <input type="checkbox" className="checkbox-remember-conditions" /> I accept all Term & Conditions
-          </lable>
+          <label htmlFor="terms" className="checkbox-remember-label">
+            <input type="checkbox" id="terms" /> I accept all Terms & Conditions
+          </label>
           <button className="loginbtn-createAcount font-18p" onClick={handleCreateAccount}>Create New Account</button>
           <Link to="/login">
           <button className="createBtn-alreadyBtn padding-8p">Already have an Account </button>

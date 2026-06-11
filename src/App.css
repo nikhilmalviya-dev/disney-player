@@ -1,60 +1,90 @@
 
-
-:root{
-  --linear-color: linear-gradient(to bottom, rgb(0 0 0),  rgba(9,1,40,255),rgb(7 44 117),rgb(0 0 0));
-  --hoverText-color:#c026d3;
-  --wheat-200 : wheat;
-  --purple-700:rgb(89, 52, 124);
-  --full-white:white;
-  --blue-dark:rgb(3, 22, 87);
-  --blue-900:rgb(4, 2, 34);
-  --white-200:#e0d2d6;
-  --grey-100:#1c1917;
-  --black-1000:black;
-  --red-200:rgb(240, 39, 39);
-  --pink-500:#c026d3;
-  --pink-100:#ba68c8;
-
+:root {
+  --navbar-height: 4.5rem;
+  --linear-color: linear-gradient(180deg, #000000 0%, #090128 30%, #07306a 70%, #000000 100%);
+  --hoverText-color: #d946ef;
+  --wheat-200: wheat;
+  --purple-700: rgb(89, 52, 124);
+  --full-white: #ffffff;
+  --blue-dark: #031657;
+  --blue-900: #040222;
+  --white-200: #e0d2d6;
+  --grey-100: #1c1917;
+  --black-1000: #000000;
+  --red-200: #f02727;
+  --pink-500: #c026d3;
+  --pink-100: #ba68c8;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --card-hover-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(0, 0, 0, 0.45);
+  --accent: #a855f7;
+  --accent-glow: rgba(168, 85, 247, 0.35);
+  --transition: 0.25s ease;
 }
 
-
-.toast-container{
-  display:flex;
+.toast-container {
+  display: flex;
 }
 
-.hoverText:hover{
-  color:var(--hoverText-color);
+.hoverText:hover {
+  color: var(--hoverText-color);
+  transition: color var(--transition);
 }
 
-img{
-  vertical-align: middle
+img {
+  vertical-align: middle;
 }
 
-*{
-  margin: 0rem;
-  padding: 0rem;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-html{
-  font-size:16px;
-}
-li{
-  list-style-type: none;
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
-i{
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+li {
+  list-style-type: none;
+}
+
+i {
   cursor: pointer;
 }
-a{
+
+a {
   text-decoration: none;
 }
-button{
+
+button {
   cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all var(--transition);
 }
-.App{
+
+input {
+  font-family: inherit;
+}
+
+.App {
   background-image: var(--linear-color);
-
-
+  min-height: 100vh;
 }
 
 

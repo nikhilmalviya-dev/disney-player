@@ -15,7 +15,7 @@ const VideoListing = () => {
         <aside>
           <Sidebar />
         </aside>
-        <section>
+        <section className="page-right">
           <GenreFilter />
           <div className="All-videos">
             {loader && (
